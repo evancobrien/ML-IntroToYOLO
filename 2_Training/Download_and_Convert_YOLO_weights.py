@@ -37,14 +37,14 @@ if __name__ == "__main__":
         h5_file = "yolo.h5"
         cfg_file = "yolov3.cfg"
         # Original URL: https://pjreddie.com/media/files/yolov3.weights
-        gdrive_id = "1ENKguLZbkgvM8unU3Hq1BoFzoLeGWvE_"
+        gdrive_id = "1J7n26vaXBgTdlVpxOFzH75l_tVvj-D27"
 
     else:
         weights_file = "yolov3-tiny.weights"
         h5_file = "yolo-tiny.h5"
         cfg_file = "yolov3-tiny.cfg"
         # Original URL: https://pjreddie.com/media/files/yolov3-tiny.weights
-        gdrive_id = "1mIEZthXBcEguMvuVAHKLXQX3mA1oZUuC"
+        gdrive_id = "1LG40ON6geD3hgI8Hi2TlzAfsNWigxKie"
 
     if not os.path.isfile(os.path.join(download_folder, weights_file)):
         print(f"\nDownloading Raw {weights_file}\n")
