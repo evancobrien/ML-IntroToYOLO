@@ -75,6 +75,7 @@ weights_path = os.path.join(keras_path, "yolo.h5")
 FLAGS = None
 
 if __name__ == "__main__":
+    
     # Delete all default flags
     parser = argparse.ArgumentParser(argument_default=argparse.SUPPRESS)
     """
