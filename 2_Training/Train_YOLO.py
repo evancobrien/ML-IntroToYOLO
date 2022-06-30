@@ -18,11 +18,9 @@ def get_parent_dir(n=1):
     return current_path
 
 
-src_path = os.path.join(get_parent_dir(0), "src")
+src_path = os.path.join(get_parent_dir(1), "src")
 sys.path.append(src_path)
 
-utils_path = os.path.join(get_parent_dir(1), "Utils")
-sys.path.append(utils_path)
 
 import numpy as np
 import tensorflow.keras.backend as K
@@ -48,7 +46,7 @@ from time import time
 import tensorflow.compat.v1 as tf
 import pickle
 
-from Train_Utils import (
+from Utils.Train_Utils import (
     get_classes,
     get_anchors,
     create_model,
@@ -142,7 +140,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--warnings",
-        default=False,
+        default=True,
         action="store_true",
         help="Display warning messages. Default is False.",
     )
@@ -215,7 +213,7 @@ if __name__ == "__main__":
     )
     reduce_lr = ReduceLROnPlateau(monitor="val_loss", factor=0.1, patience=3, verbose=1)
     early_stopping = EarlyStopping(
-        monitor="val_loss", min_delta=0, patience=10, verbose=1
+        monitor="val_loss", min_delta=0, patience=10, verbose=0
     )
 
     val_split = FLAGS.val_split

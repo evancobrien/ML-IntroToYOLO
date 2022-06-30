@@ -4,7 +4,7 @@ import numpy as np
 import re
 import os
 from PIL import Image
-from Get_File_Paths import GetFileList, ChangeToOtherMachine
+from .Get_File_Paths import GetFileList, ChangeToOtherMachine
 
 
 def convert_vott_csv_to_yolo(

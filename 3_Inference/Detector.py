@@ -11,24 +11,22 @@ def get_parent_dir(n=1):
     return current_path
 
 
-src_path = os.path.join(get_parent_dir(1), "2_Training", "src")
-utils_path = os.path.join(get_parent_dir(1), "Utils")
+src_path = os.path.join(get_parent_dir(1), "src")
 
 sys.path.append(src_path)
-sys.path.append(utils_path)
 
 import argparse
 from keras_yolo3.yolo import YOLO, detect_video, detect_webcam
 from PIL import Image
 from timeit import default_timer as timer
-from utils import load_extractor_model, load_features, parse_input, detect_object
+from Utils.utils import load_extractor_model, load_features, parse_input, detect_object
 import test
-import utils
+import Utils.utils
 import pandas as pd
 import numpy as np
-from Get_File_Paths import GetFileList
+from Utils.Get_File_Paths import GetFileList
 import random
-from Train_Utils import get_anchors
+from Utils.Train_Utils import get_anchors
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
@@ -138,8 +136,8 @@ if __name__ == "__main__":
         "--postfix",
         type=str,
         dest="postfix",
-        default="_catface",
-        help='Specify the postfix for images with bounding boxes. Default is "_catface"',
+        default="_detected",
+        help='Specify the postfix for images with bounding boxes. Default is "_detected"',
     )
 
     parser.add_argument(
